@@ -23,9 +23,10 @@ jobs:
       - name: Build and Push Docker Image
         uses: docker/build-push-action@v5
         with:
+          
           context: ./
           push: true
-          tags: ohmooo/test-app1
+          tags: ${{ secrets.DOCKER_USER }}/test-app1
           cache-from: type=gha
           cache-to: type=gha,mode=max
 
